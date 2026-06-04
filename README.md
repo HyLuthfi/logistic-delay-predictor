@@ -1,6 +1,6 @@
 # 📦 Sistem Prediksi Logistik & Pengiriman
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io)
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://logistic-delay-predictor.streamlit.app)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![Machine Learning](https://img.shields.io/badge/Machine_Learning-Decision_Tree-FF6F00?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
