@@ -9,6 +9,16 @@ Sistem Pendukung Keputusan (DSS) berkinerja tinggi untuk memprediksi potensi ket
 
 Dilengkapi dengan antarmuka web *Dashboard* level enterprise yang dibangun menggunakan **Streamlit**, proyek ini menawarkan analitik visual *real-time*, tata letak *Clean & White* eksklusif, dan kemampuan pemrosesan prediktif skala besar.
 
+---
+
+> 🌐 **LIVE DEMO AVAILABLE**
+>
+> 🚀 **[KLIK DI SINI UNTUK MENCOBA DASHBOARD (STREAMLIT CLOUD)](https://logistic-delay-predictor.streamlit.app)** 🚀
+> 
+> *(Tidak perlu instalasi. Anda bisa langsung mencoba fitur Batch Prediction dan Eksplorasi Visual sekarang juga!)*
+
+---
+
 ## ✨ Fitur Unggulan
 
 - **Algoritma Murni (From Scratch)**: Implementasi mandiri matematika dasar AI, mencakup kalkulasi *Shannon Entropy*, *Information Gain*, dan sistem percabangan rekursif.
