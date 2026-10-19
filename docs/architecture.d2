@@ -1,0 +1,241 @@
+direction: right
+
+title: {
+  label: "Enterprise Logistic Delay Predictor — From-Scratch Decision Tree Architecture"
+  near: top-center
+  shape: text
+  style: {
+    font-size: 24
+    bold: true
+    font-color: "#f8fafc"
+  }
+}
+
+data_layer: "1. Data Ingestion & Preprocessing" {
+  direction: right
+  style: {
+    stroke: "#38bdf8"
+    fill: "#0f172a"
+    stroke-width: 2
+    font-color: "#f8fafc"
+  }
+
+  raw_dataset: "Train.csv Dataset\n(10,999 E-Commerce Shipments)" {
+    shape: cylinder
+    style: {
+      fill: "#1e293b"
+      stroke: "#38bdf8"
+    }
+  }
+
+  sanitization: "Attribute Filtering & Cleaning\n(Drop ID & Customer_rating)" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#64748b"
+    }
+  }
+
+  categorical_encoder: "Deterministic Label Encoding\n(Warehouse, Mode, Importance, Gender)" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#38bdf8"
+    }
+  }
+
+  train_test_split: "Cross-Validation Partition\n(80% Train : 20% Evaluation, Seed 42)" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#38bdf8"
+    }
+  }
+
+  raw_dataset -> sanitization: "Raw Records"
+  sanitization -> categorical_encoder: "Clean Columns"
+  categorical_encoder -> train_test_split: "Encoded Features"
+}
+
+entropy_engine: "2. Mathematical Entropy & Split Engine" {
+  direction: right
+  style: {
+    stroke: "#fbbf24"
+    fill: "#0f172a"
+    stroke-width: 2
+    font-color: "#f8fafc"
+  }
+
+  shannon_entropy: "Shannon Entropy H(S)\n-Σ (p_i × log2(p_i))" {
+    shape: oval
+    style: {
+      fill: "#1e293b"
+      stroke: "#fbbf24"
+    }
+  }
+
+  binary_partition: "Binary Subset Partition\nNumeric <= v | Categorical == v" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#fbbf24"
+    }
+  }
+
+  info_gain: "Information Gain IG(S, A, v)\nH(S) - Σ (|S_v| / |S|) × H(S_v)" {
+    shape: oval
+    style: {
+      fill: "#1e293b"
+      stroke: "#fbbf24"
+    }
+  }
+
+  optimum_splitter: "Exhaustive Optimum Splitter\nMax(Information Gain)" {
+    shape: diamond
+    style: {
+      fill: "#1e293b"
+      stroke: "#f59e0b"
+    }
+  }
+
+  shannon_entropy -> binary_partition: "Subset Impurity"
+  binary_partition -> info_gain: "Weighted Entropies"
+  info_gain -> optimum_splitter: "Best Feature (k) & Split (v)"
+}
+
+tree_core: "3. Recursive Decision Tree Construction" {
+  direction: right
+  style: {
+    stroke: "#10b981"
+    fill: "#0f172a"
+    stroke-width: 2
+    font-color: "#f8fafc"
+  }
+
+  root_node: "Root Decision Node\nOptimal Primary Attribute" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#10b981"
+    }
+  }
+
+  internal_nodes: "Recursive Internal Branches\nLeft Subtree | Right Subtree" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#10b981"
+    }
+  }
+
+  stopping_guards: "Pruning & Stopping Guards\nPure Node (H=0) | Depth >= 10 | Split < 5" {
+    shape: diamond
+    style: {
+      fill: "#1e293b"
+      stroke: "#34d399"
+    }
+  }
+
+  terminal_leaves: "Classification Leaf Nodes\nClass 1 (Delayed) | Class 0 (On-Time)" {
+    shape: oval
+    style: {
+      fill: "#1e293b"
+      stroke: "#10b981"
+    }
+  }
+
+  root_node -> internal_nodes: "Branch Recursion"
+  internal_nodes -> stopping_guards: "Guard Checks"
+  stopping_guards -> terminal_leaves: "Majority Voting"
+}
+
+inference_engine: "4. Dual Inference & Evaluation Engine" {
+  direction: right
+  style: {
+    stroke: "#a78bfa"
+    fill: "#0f172a"
+    stroke-width: 2
+    font-color: "#f8fafc"
+  }
+
+  single_predictor: "Single Real-Time Inference\nVector Path Traversal (<1ms)" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#a78bfa"
+    }
+  }
+
+  batch_streamer: "Batch Streaming Inference\nIn-Memory Pandas Processing" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#a78bfa"
+    }
+  }
+
+  model_metrics: "Model Quality Evaluator\nAccuracy, Precision, Recall, F1" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#c084fc"
+    }
+  }
+
+  single_predictor -> model_metrics: "Validation Loop"
+  batch_streamer -> model_metrics: "Batch Verification"
+}
+
+presentation_layer: "5. Streamlit Analytics & Intelligence Surface" {
+  direction: right
+  style: {
+    stroke: "#f43f5e"
+    fill: "#0f172a"
+    stroke-width: 2
+    font-color: "#f8fafc"
+  }
+
+  tab_single_ui: "Tab 1: Single Prediction\nInteractive Form & Status Badges" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#f43f5e"
+    }
+  }
+
+  tab_batch_ui: "Tab 2: Batch Prediction\nDrag-and-Drop CSV & Export" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#f43f5e"
+    }
+  }
+
+  tab_analytics_ui: "Tab 3: Visual EDA & Metrics\nKPI Cards & Scatter Correlation" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#f43f5e"
+    }
+  }
+
+  tab_methodology_ui: "Tab 4: Algorithmic Architecture\nShannon Entropy & Split Runbook" {
+    shape: rectangle
+    style: {
+      fill: "#1e293b"
+      stroke: "#f43f5e"
+    }
+  }
+}
+
+# Cross-Container Connections
+data_layer.train_test_split -> entropy_engine.shannon_entropy: "Training Set"
+entropy_engine.optimum_splitter -> tree_core.root_node: "Best Split Parameters"
+tree_core.terminal_leaves -> inference_engine.single_predictor: "Compiled Tree Dict"
+tree_core.terminal_leaves -> inference_engine.batch_streamer: "Compiled Tree Dict"
+data_layer.train_test_split -> inference_engine.model_metrics: "Testing Set (20%)"
+
+inference_engine.single_predictor -> presentation_layer.tab_single_ui: "Real-Time Verdict"
+inference_engine.batch_streamer -> presentation_layer.tab_batch_ui: "Appended CSV Stream"
+inference_engine.model_metrics -> presentation_layer.tab_analytics_ui: "Benchmark KPIs"
+entropy_engine.shannon_entropy -> presentation_layer.tab_methodology_ui: "Mathematical Proof"

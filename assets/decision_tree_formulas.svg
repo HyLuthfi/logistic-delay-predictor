@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 580" width="100%" height="100%" style="background-color: #0d1117; border-radius: 14px; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Card Gradients -->
+    <linearGradient id="panel-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#11111b" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="panel-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16232e" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="panel-grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1833" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#130e24" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Badge Accents -->
+    <linearGradient id="accent-amber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="accent-emerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="accent-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Title & Header Bar -->
+  <rect x="25" y="22" width="1030" height="52" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.2" />
+  <circle cx="50" cy="48" r="6" fill="#fbbf24" />
+  <circle cx="68" cy="48" r="6" fill="#34d399" />
+  <circle cx="86" cy="48" r="6" fill="#38bdf8" />
+  <text x="110" y="54" fill="#f0f6fc" font-size="16" font-weight="700" letter-spacing="0.5">MATHEMATICAL FOUNDATION: SHANNON ENTROPY &amp; FROM-SCRATCH DECISION TREE</text>
+  <rect x="880" y="34" width="160" height="28" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1" />
+  <text x="960" y="52" fill="#58a6ff" font-size="11" font-weight="600" text-anchor="middle">PURE PYTHON MATH</text>
+
+  <!-- ========================================== -->
+  <!-- PANEL 1: SHANNON ENTROPY (AMBER)           -->
+  <!-- ========================================== -->
+  <g transform="translate(25, 90)">
+    <rect x="0" y="0" width="330" height="465" rx="12" fill="url(#panel-grad-1)" stroke="#d97706" stroke-width="1.5" />
+    <path d="M 0 12 C 0 5.373 5.373 0 12 0 L 318 0 C 324.627 0 330 5.373 330 12 L 330 42 L 0 42 Z" fill="#2d2214" />
+    <circle cx="20" cy="21" r="5" fill="#fbbf24" />
+    <text x="35" y="26" font-size="14" font-weight="700" fill="#fbbf24">1. SHANNON ENTROPY H(S)</text>
+
+    <!-- Formula Sub-Card 1 -->
+    <g transform="translate(15, 55)">
+      <rect x="0" y="0" width="300" height="110" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1" />
+      <text x="12" y="24" font-size="11" font-weight="600" fill="#8b949e">RUMUS ENTROPI DATASET (S)</text>
+      
+      <!-- Math expression: H(S) = - \sum_{i=1}^c p_i * log2(p_i) -->
+      <text x="15" y="65" font-size="18" font-weight="700" fill="#fbbf24" font-family="'Courier New', monospace">H(S) = -</text>
+      
+      <!-- Big Sigma -->
+      <text x="105" y="76" font-size="34" font-weight="300" fill="#fbbf24" font-family="'Times New Roman', serif">&#x2211;</text>
+      <text x="126" y="52" font-size="10" font-weight="700" fill="#fbbf24">c</text>
+      <text x="124" y="88" font-size="10" font-weight="600" fill="#fbbf24">i=1</text>
+      
+      <text x="148" y="66" font-size="16" font-weight="600" fill="#f0f6fc" font-family="'Courier New', monospace">p<tspan font-size="11" dy="4">i</tspan><tspan font-size="16" dy="-4"> &#183; log</tspan><tspan font-size="10" dy="4">2</tspan><tspan font-size="16" dy="-4">(p</tspan><tspan font-size="11" dy="4">i</tspan><tspan font-size="16" dy="-4">)</tspan></text>
+      
+      <text x="12" y="98" font-size="10" fill="#6e7681">c = 2 kelas biner: Tepat Waktu (0) &amp; Terlambat (1)</text>
+    </g>
+
+    <!-- Formula Sub-Card 2 -->
+    <g transform="translate(15, 178)">
+      <rect x="0" y="0" width="300" height="115" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1" />
+      <text x="12" y="24" font-size="11" font-weight="600" fill="#8b949e">PROBABILITAS KELAS KANDIDAT</text>
+      
+      <!-- Math expression: p_i = |S_i| / |S| with horizontal fraction bar -->
+      <text x="20" y="64" font-size="17" font-weight="700" fill="#f0f6fc" font-family="'Courier New', monospace">p<tspan font-size="12" dy="4">i</tspan><tspan font-size="17" dy="-4"> =</tspan></text>
+      
+      <!-- Fraction bar -->
+      <line x1="80" y1="60" x2="160" y2="60" stroke="#fbbf24" stroke-width="2" />
+      <!-- Numerator -->
+      <text x="120" y="50" font-size="14" font-weight="600" fill="#fbbf24" text-anchor="middle" font-family="'Courier New', monospace">|S<tspan font-size="10" dy="3">i</tspan><tspan font-size="14" dy="-3">|</tspan></text>
+      <!-- Denominator -->
+      <text x="120" y="80" font-size="14" font-weight="600" fill="#fbbf24" text-anchor="middle" font-family="'Courier New', monospace">|S|</text>
+      
+      <text x="175" y="64" font-size="12" fill="#8b949e">= frekuensi kelas</text>
+      <text x="12" y="104" font-size="10" fill="#6e7681">Counter(r[-1] for r in baris) / total_sampel</text>
+    </g>
+
+    <!-- Characteristic Callout Box -->
+    <g transform="translate(15, 305)">
+      <rect x="0" y="0" width="300" height="145" rx="8" fill="#1c1917" stroke="#44403c" stroke-width="1" />
+      <text x="12" y="22" font-size="11" font-weight="700" fill="#fbbf24">PROFIL DERAJAT IMPURITAS:</text>
+      <text x="12" y="44" font-size="11" fill="#d6d3d1">&#x2022; <tspan font-weight="700" fill="#34d399">H(S) = 0.00 :</tspan> Node Murni Sempurna</text>
+      <text x="24" y="60" font-size="10" fill="#a8a29e">Semua paket memiliki status sama persis.</text>
+      <text x="12" y="82" font-size="11" fill="#d6d3d1">&#x2022; <tspan font-weight="700" fill="#fbbf24">H(S) = 1.00 :</tspan> Impuritas Maksimal</text>
+      <text x="24" y="98" font-size="10" fill="#a8a29e">Probabilitas 50% Tepat Waktu vs 50% Delay.</text>
+      <text x="12" y="120" font-size="11" fill="#d6d3d1">&#x2022; <tspan font-weight="700" fill="#38bdf8">Optimalitas :</tspan> Pohon mencari H terkecil</text>
+      <text x="24" y="136" font-size="10" fill="#a8a29e">Mendongkrak kepastian di cabang anak.</text>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- PANEL 2: INFORMATION GAIN (EMERALD)        -->
+  <!-- ========================================== -->
+  <g transform="translate(375, 90)">
+    <rect x="0" y="0" width="330" height="465" rx="12" fill="url(#panel-grad-2)" stroke="#059669" stroke-width="1.5" />
+    <path d="M 0 12 C 0 5.373 5.373 0 12 0 L 318 0 C 324.627 0 330 5.373 330 12 L 330 42 L 0 42 Z" fill="#063223" />
+    <circle cx="20" cy="21" r="5" fill="#34d399" />
+    <text x="35" y="26" font-size="14" font-weight="700" fill="#34d399">2. INFORMATION GAIN IG(S, A)</text>
+
+    <!-- Formula Sub-Card 1 -->
+    <g transform="translate(15, 55)">
+      <rect x="0" y="0" width="300" height="110" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1" />
+      <text x="12" y="22" font-size="11" font-weight="600" fill="#8b949e">REDUKSI KETIDAKPASTIAN ATRIBUT</text>
+      
+      <!-- Math expression: IG(S, A) = H(S) - \sum (|S_v| / |S|) * H(S_v) -->
+      <text x="12" y="55" font-size="14" font-weight="700" fill="#34d399" font-family="'Courier New', monospace">IG(S, A, v) = H(S) -</text>
+      
+      <!-- Fraction bar inside expression -->
+      <text x="12" y="85" font-size="12" font-weight="600" fill="#f0f6fc" font-family="'Courier New', monospace">[</text>
+      
+      <line x1="26" y1="80" x2="68" y2="80" stroke="#34d399" stroke-width="1.5" />
+      <text x="47" y="73" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle" font-family="'Courier New', monospace">|S<tspan font-size="9" dy="2">kiri</tspan><tspan font-size="11" dy="-2">|</tspan></text>
+      <text x="47" y="93" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle" font-family="'Courier New', monospace">|S|</text>
+      
+      <text x="74" y="85" font-size="12" font-weight="600" fill="#f0f6fc" font-family="'Courier New', monospace">&#183; H(S<tspan font-size="9" dy="2">kiri</tspan><tspan font-size="12" dy="-2">) +</tspan></text>
+      
+      <line x1="168" y1="80" x2="216" y2="80" stroke="#34d399" stroke-width="1.5" />
+      <text x="192" y="73" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle" font-family="'Courier New', monospace">|S<tspan font-size="9" dy="2">kanan</tspan><tspan font-size="11" dy="-2">|</tspan></text>
+      <text x="192" y="93" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle" font-family="'Courier New', monospace">|S|</text>
+      
+      <text x="222" y="85" font-size="12" font-weight="600" fill="#f0f6fc" font-family="'Courier New', monospace">&#183; H(S<tspan font-size="9" dy="2">kanan</tspan><tspan font-size="12" dy="-2">)</tspan> ]</text>
+    </g>
+
+    <!-- Formula Sub-Card 2 -->
+    <g transform="translate(15, 178)">
+      <rect x="0" y="0" width="300" height="115" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1" />
+      <text x="12" y="24" font-size="11" font-weight="600" fill="#8b949e">LOGIKA PARTISI ATRIBUT GANDA</text>
+      
+      <text x="12" y="50" font-size="12" font-weight="700" fill="#34d399">&#x25B6; Variabel Kontinu / Numerik:</text>
+      <text x="24" y="68" font-size="11" fill="#f0f6fc" font-family="'Courier New', monospace">S<tspan font-size="9" dy="2">kiri</tspan><tspan font-size="11" dy="-2"> = {x &#x2208; S | x[k] &#x2264; v}</tspan></text>
+      
+      <text x="12" y="90" font-size="12" font-weight="700" fill="#38bdf8">&#x25B6; Variabel Diskrit / Kategorikal:</text>
+      <text x="24" y="108" font-size="11" fill="#f0f6fc" font-family="'Courier New', monospace">S<tspan font-size="9" dy="2">kiri</tspan><tspan font-size="11" dy="-2"> = {x &#x2208; S | x[k] == v}</tspan></text>
+    </g>
+
+    <!-- Best Split Selection Callout Box -->
+    <g transform="translate(15, 305)">
+      <rect x="0" y="0" width="300" height="145" rx="8" fill="#022c22" stroke="#065f46" stroke-width="1" />
+      <text x="12" y="22" font-size="11" font-weight="700" fill="#34d399">SELEKSI PEMISAH TERBAIK (SPLIT):</text>
+      <text x="12" y="44" font-size="12" font-weight="700" fill="#f0f6fc" font-family="'Courier New', monospace">(k*, v*) = arg max IG(S, k, v)</text>
+      <text x="12" y="62" font-size="10" fill="#a7f3d0">Iterasi menyeluruh atas seluruh pasangan kolom (k) dan nilai unik (v) di dataset.</text>
+      <text x="12" y="86" font-size="11" font-weight="700" fill="#6ee7b7">&#x2022; Fitur Paling Berpengaruh:</text>
+      <text x="24" y="104" font-size="10" fill="#d1fae5">1. <tspan font-weight="600">Discount_offered :</tspan> IG tertinggi</text>
+      <text x="24" y="120" font-size="10" fill="#d1fae5">2. <tspan font-weight="600">Weight_in_gms :</tspan> Pemisah biner kedua</text>
+      <text x="24" y="136" font-size="10" fill="#d1fae5">3. <tspan font-weight="600">Customer_care_calls :</tspan> Cabang tersier</text>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- PANEL 3: STOPPING GUARDS (CYAN / VIOLET)   -->
+  <!-- ========================================== -->
+  <g transform="translate(725, 90)">
+    <rect x="0" y="0" width="330" height="465" rx="12" fill="url(#panel-grad-3)" stroke="#7c3aed" stroke-width="1.5" />
+    <path d="M 0 12 C 0 5.373 5.373 0 12 0 L 318 0 C 324.627 0 330 5.373 330 12 L 330 42 L 0 42 Z" fill="#24133b" />
+    <circle cx="20" cy="21" r="5" fill="#38bdf8" />
+    <text x="35" y="26" font-size="14" font-weight="700" fill="#a78bfa">3. STOPPING &amp; MAJORITY LEAF</text>
+
+    <!-- Formula Sub-Card 1 -->
+    <g transform="translate(15, 55)">
+      <rect x="0" y="0" width="300" height="110" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1" />
+      <text x="12" y="22" font-size="11" font-weight="600" fill="#8b949e">4 BATAS HENTI REKURSIF (GUARDS)</text>
+      
+      <text x="12" y="44" font-size="11" fill="#f0f6fc"><tspan font-weight="700" fill="#38bdf8">1. Pure Node:</tspan> Semua label sama (H = 0)</text>
+      <text x="12" y="64" font-size="11" fill="#f0f6fc"><tspan font-weight="700" fill="#a78bfa">2. Max Depth:</tspan> Kedalaman cabang &#x2265; 10</text>
+      <text x="12" y="84" font-size="11" fill="#f0f6fc"><tspan font-weight="700" fill="#f43f5e">3. Min Split:</tspan> Jumlah baris data &lt; 5 sampel</text>
+      <text x="12" y="104" font-size="11" fill="#f0f6fc"><tspan font-weight="700" fill="#fbbf24">4. Zero Gain:</tspan> Tidak ada reduksi entropi (IG = 0)</text>
+    </g>
+
+    <!-- Formula Sub-Card 2 -->
+    <g transform="translate(15, 178)">
+      <rect x="0" y="0" width="300" height="115" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1" />
+      <text x="12" y="24" font-size="11" font-weight="600" fill="#8b949e">ATURAN KLASIFIKASI KEPUTUSAN DAUN</text>
+      
+      <!-- Math expression: y_hat = arg max_c \sum I(y_i == c) -->
+      <text x="15" y="58" font-size="15" font-weight="700" fill="#38bdf8" font-family="'Courier New', monospace">&#375; = arg max</text>
+      <text x="135" y="66" font-size="11" font-weight="600" fill="#a78bfa">c &#x2208; {0, 1}</text>
+      
+      <!-- Big Sigma -->
+      <text x="195" y="68" font-size="28" font-weight="300" fill="#38bdf8" font-family="'Times New Roman', serif">&#x2211;</text>
+      <text x="215" y="58" font-size="13" font-weight="600" fill="#f0f6fc" font-family="'Courier New', monospace">&#x1D7D9;(y<tspan font-size="10" dy="3">i</tspan><tspan font-size="13" dy="-3"> = c)</tspan></text>
+      
+      <text x="12" y="96" font-size="11" fill="#c4b5fd">&#x2192; Counter(label).most_common(1)[0][0]</text>
+      <text x="12" y="110" font-size="10" fill="#6e7681">Mengembalikan kelas mayoritas jika simpul terhenti</text>
+    </g>
+
+    <!-- Operational Verdict Callout Box -->
+    <g transform="translate(15, 305)">
+      <rect x="0" y="0" width="300" height="145" rx="8" fill="#1e1035" stroke="#581c87" stroke-width="1" />
+      <text x="12" y="22" font-size="11" font-weight="700" fill="#a78bfa">OUTPUT KEPUTUSAN PREDIKSI:</text>
+      
+      <rect x="12" y="38" width="130" height="34" rx="6" fill="#064e3b" stroke="#059669" stroke-width="1" />
+      <text x="77" y="59" font-size="12" font-weight="700" fill="#a7f3d0" text-anchor="middle">KELAS 0: AMAN</text>
+      
+      <rect x="155" y="38" width="133" height="34" rx="6" fill="#7f1d1d" stroke="#dc2626" stroke-width="1" />
+      <text x="221" y="59" font-size="12" font-weight="700" fill="#fecaca" text-anchor="middle">KELAS 1: DELAY</text>
+
+      <text x="12" y="94" font-size="10" fill="#e9d5ff">&#x2022; <tspan font-weight="700">Tepat Waktu (0):</tspan> Rute lancar, resi aman</text>
+      <text x="12" y="112" font-size="10" fill="#e9d5ff">&#x2022; <tspan font-weight="700">Terlambat (1):</tspan> Peringatan risiko delivery</text>
+      <text x="12" y="132" font-size="10" fill="#a78bfa">&#x2022; <tspan font-weight="700">Latensi Inferensi:</tspan> &lt; 0.8 ms per resi</text>
+    </g>
+  </g>
+</svg>
